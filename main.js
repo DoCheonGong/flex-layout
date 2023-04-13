@@ -20,7 +20,7 @@ for (let el of articles) {
     });
 
     // 클릭 시 이벤트
-    el.addEventListener("click", function() {
+    el.addEventListener("click", function(e) {
         // 클릭 이벤트가 일어났을 때
         // 1. aside에 on이라는 활성화 class를 붙여주어
         // 화면에 띄워주는 일이 있어야 한다
@@ -37,12 +37,13 @@ for (let el of articles) {
             // 올바른 정보를 변수에 담을 수 있게 한다 
             let art_p = e.currentTarget.querySelector("p").innerText;
             let art_video_src = e.currentTarget.querySelector("video").getAttribute("src");
-            console.log(art_h2);
-            console.log(art_p);
             console.log(art_video_src);
             // 2-2. 변수로 저장된 값을 aside에 교체
-
+            aside.querySelector("h2").innerText = art_h2;
+            aside.querySelector("p").innerText = art_p;
+            aside.querySelector("video").setAttribute("src", art_video_src);
         // 3. 비디오가 플레이되어야 한다
+        aside.querySelector("video").play();
     });
 
     /*
@@ -68,3 +69,10 @@ for (let el of articles) {
 
     // 이벤트 - article 클릭
 }
+
+close.addEventListener("click", function() {
+    aside.classList.remove("on");
+    aside.querySelector("video").pause();
+});
+// 어떤 attribute를 쓰는 지 알기 때문에
+// function에 e가 필요하지 않다

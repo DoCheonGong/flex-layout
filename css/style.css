@@ -141,7 +141,7 @@ main aside {
   display: flex;
   justify-content: space-between;
 }
-main aside:on {
+main aside.on {
   opacity: 1;
   left: 0%;
 }
