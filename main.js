@@ -1,7 +1,7 @@
 let articles = document.querySelectorAll("article");
 let aside = document.querySelector("aside");
 let close = aside.querySelector("span");
-
+console.log(articles);
 // 유사배열로 반환된 articles를 반복으로 돌리면서
 // 각각의 article 개별로 이벤트를 걸어주어야 한다
 // 따라서 반복문으로 만든다
@@ -9,7 +9,7 @@ let close = aside.querySelector("span");
 for (let el of articles) {
     // 이벤트 - 마우스가 들어가면 비디오 재생
     // hover를 js로 하게 되면 두 가지 이벤트로 작성
-    
+
     // mouseenter와 mouseleave 이벤트 두 가지를
     // 모두 걸어야 hover처럼 작동
     el.addEventListener("mouseenter", function(e) {
