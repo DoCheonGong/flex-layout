@@ -105,7 +105,7 @@ main section article .inner figure {
   filter: saturate(10%);
   transition: 1s;
 }
-main section article .inner figure img {
+main section article .inner figure video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -126,6 +126,51 @@ main section article:hover .inner figure {
   height: 25vh;
   filter: saturate(100%);
   transform: translateY(5vh);
+}
+main aside {
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+  padding: 20vh 7vw 14vh 20vw;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  opacity: 0;
+  transition: all 1s;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+}
+main aside:on {
+  opacity: 1;
+  left: 0%;
+}
+main aside .txt {
+  width: 25%;
+  height: 100%;
+}
+main aside .txt h2 {
+  font: normal 6vw/1 "Alegreya Sans SC";
+  color: #ddd;
+  margin-bottom: 20px;
+}
+main aside .txt p {
+  font: 1.1vw/1.3 "Arial";
+  color: #666;
+  margin-bottom: 60px;
+}
+main aside .txt span {
+  cursor: pointer;
+  color: orange;
+}
+main aside figure {
+  width: 72%;
+  height: 100%;
+}
+main aside figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
