@@ -17,7 +17,33 @@ for (let el of articles) {
     });
     el.addEventListener("mouseleave", function(e) {
         e.currentTarget.querySelector("video").pause();
-    })
+    });
+
+    // 클릭 시 이벤트
+    el.addEventListener("click", function() {
+        // 클릭 이벤트가 일어났을 때
+        // 1. aside에 on이라는 활성화 class를 붙여주어
+        // 화면에 띄워주는 일이 있어야 한다
+        aside.classList.add("on");
+
+        // 2. 클릭한 article의 h2, p, video의 경로를
+        // 가지고와서 aside에 교체해야 한다
+            // 2-1. 클릭한 article 안의
+            // 내용 (h2, p, video)을 변수로 저장
+            let art_h2 = e.currentTarget.querySelector("h2").innerText;
+            // e.currentTarget 코드로 인해
+            // 정확하게 몇 번째 article을 선택했고,
+            // 가지고 올 article을 지정해서
+            // 올바른 정보를 변수에 담을 수 있게 한다 
+            let art_p = e.currentTarget.querySelector("p").innerText;
+            let art_video_src = e.currentTarget.querySelector("video").getAttribute("src");
+            console.log(art_h2);
+            console.log(art_p);
+            console.log(art_video_src);
+            // 2-2. 변수로 저장된 값을 aside에 교체
+
+        // 3. 비디오가 플레이되어야 한다
+    });
 
     /*
     currentTarget은 이벤트 리스너가 붙어지는 대상을 의미
