@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    position: relative;
+}
+
+main header {
+    width: 20%;
+    height: 100%;
+    padding: 10vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+main header h1 {
+    font-size: 0;
+    color: #fff;
+}
+
+main header h1 i {
+    font-size: 5vw;
+    margin-bottom: 15px;
+}
+
+main header h1 span {
+    font: 1vw/1 'Arial';
+}
+
+main header address {
+    font: normal 11px/1.2 'Arial';
+    color: #888;
+}
+
+main nav {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+}
+
+main nav ul {
+    display: flex;
+}
+
+main nav ul li a {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 30px;
+}
+
+main section {
+    width: 80%;
+    height: 100%;
+    padding-top: 15vh;
+    display: flex;
+}
+
+main section article {
+    flex: 1;
+    padding: 70px 40px 100px;
+    opacity: 0.6;
+    transition: 1s;
+    cursor: pointer;
+}
+
+main section article:hover {
+    opacity: 1;
+    flex: 1.5;
+}
+
+main section article .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+/*
+main section article .inner::after {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #444;
+    transition: 1s;
+}
+
+main section article:hover .inner::after {
+    opacity: 1;
+    transform: translateX(280px);
+}
+*/
+main section article .inner .txt h2 {
+    font: normal 20px/1 'Alegreya Sans SC';
+    color: #ccc;
+    margin-bottom: 40px;
+    padding-top: 70px;
+    /* 
+    hover 이벤트 시 특수상황
+    때문에 padding 부여
+    */
+    transition: all 1s;
+}
+
+main section article .inner .txt h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #777;
+    margin-top: 20px;
+    transition: 1s;
+}
+main section article:hover .inner .txt h2 {
+    font-size: 5vw;
+    padding-top: 0px;
+}
+main section article:hover .inner .txt h2::after {
+    width: 120px;
+    background-color: orange;
+}
+
+main section article .inner .txt p {
+    font: 14px/1 'Arial';
+    color: #999;
+}
+
+main section article .inner figure {
+    width: 100%;
+    height: 15vh;
+    filter: saturate(10%);
+    transition: 1s;
+}
+main section article:hover .inner figure {
+    height: 25vh;
+    filter: saturate(100%);
+    transform: translateY(5vh);
+}
+
+main section article .inner figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
